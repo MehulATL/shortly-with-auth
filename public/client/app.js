@@ -27,6 +27,9 @@ angular.module('shortlyApp', [
       redirectTo: '/'
     });
 })
+
+///////////////////////////////////
+
 .config(['$httpProvider', function($httpProvider) {
   $httpProvider.responseInterceptors.push(['$q', function($q) {
     return function(promise) {
@@ -47,3 +50,13 @@ angular.module('shortlyApp', [
     };
   }]);
 }]);
+
+.run(function($rootScope, $location, Session){
+  $rootScope.$on('$routeChangeStart', function(event, nextUrl, currentUrl){
+    console.log(event, nextUrl);
+    if(nextUrl.$$route.controller !== 'LoginController' && !Session.isLoggedIn()){
+      console.log('no auth');
+      $location.path('/login');
+    }
+  })
+})
