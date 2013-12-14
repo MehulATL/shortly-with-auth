@@ -9,7 +9,7 @@ angular.module('shortlyApp', [
     })
     .when('/links', {
       controller: 'LinksController',
-      templateUrl: 'templates/links.html'
+      templateUrl: 'client/templates/links.html'
     })
     .otherwise({
       redirectTo: '/'

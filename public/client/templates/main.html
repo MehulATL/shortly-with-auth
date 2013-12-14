@@ -1,1 +1,10 @@
-<h1 ng-controller="HomeController">{{name}}</h1>
+<div ng-controller="HomeController">
+  <h1>{{name}}</h1>
+
+  <form ng-submit="sendStuff()" ng-controller='formController'>
+    <input ng-model='formData.url' type="text"/>
+    <button>Submit</button>
+    <h2>{{formData.url}}</h2>
+  </form>
+
+</div>
