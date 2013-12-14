@@ -37,6 +37,26 @@ angular.module('shortlyApp')
     });
 })
 
-.controller("StatsController", function($scope, $http) {
+// STATS
+.controller("StatsController", function($scope) {
   $scope.name = 'stats';
+})
+
+// LOGIN
+.controller('LoginController', function($scope, $http) {
+  $scope.name = 'login';
+  $scope.loginData = {};
+  $scope.login= {
+    send: function(form) {
+      if(form.$valid) {
+        $http({
+          method: 'POST',
+          url: '/api/login',
+          data: JSON.stringify($scope.loginData)
+        }).then(function(data) {
+          console.log(data);
+        });
+      }
+    }
+  };
 });

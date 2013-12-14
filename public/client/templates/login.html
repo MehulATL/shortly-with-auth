@@ -1,0 +1,15 @@
+<h1>login</h1>
+<div ng-controller="LoginController">
+
+  <form name="loginForm" ng-submit='login.send(loginForm)' novalidate >
+
+    <label name='username' >Username: </label>
+    <input type='text' ng-model='loginData.username' required name="username" ng-minlength=3/>
+
+    <label name='password' >Password: </label>
+    <input type='password' ng-model='loginData.password' required name='password' ng-minlength=8 />
+
+    <button ng-disabled='loginForm.$invalid'>login</button>
+  </form>
+
+</div>

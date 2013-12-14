@@ -15,6 +15,10 @@ angular.module('shortlyApp', [
       controller: 'StatsController',
       templateUrl: 'client/templates/stats.html'
     })
+    .when('/login', {
+      controller: 'StatsController',
+      templateUrl: 'client/templates/login.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
