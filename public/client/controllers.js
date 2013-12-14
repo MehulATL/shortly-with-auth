@@ -30,7 +30,9 @@ angular.module('shortlyApp')
     }).then(function(data) {
       console.log(data);
       $scope.data = data.data;
-
-
     });
+})
+
+.controller("StatsController", function($scope, $http) {
+  $scope.name = 'stats';
 });
