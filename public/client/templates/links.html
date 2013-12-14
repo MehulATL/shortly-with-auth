@@ -1,1 +1,8 @@
-<h1 ng-controller="LinksController"> {{name}}</h1>
+<div ng-controller="LinksController">
+  <h1>{{name}}</h1>
+  <ul class='list' ng-repeat="link in data">
+    <li >
+      {{link.url}}
+    </li>
+  </ul>
+</div>

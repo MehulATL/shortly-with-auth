@@ -28,5 +28,6 @@ angular.module('shortlyApp')
     url: '/links'
     }).then(function(data) {
       console.log(data);
+      $scope.data = data.data;
     });
 });
