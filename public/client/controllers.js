@@ -4,6 +4,7 @@ angular.module('shortlyApp')
 .controller('HomeController', function($scope, $http) {
   $scope.name = 'Shortly';
 })
+
 .controller('formController', function($scope, $http) {
   $scope.name = 'formController';
   $scope.formData = {};
@@ -54,7 +55,7 @@ angular.module('shortlyApp')
           url: '/api/login',
           data: JSON.stringify($scope.loginData)
         }).then(function(data) {
-          console.log(data);
+          console.log();
         });
       }
     }
