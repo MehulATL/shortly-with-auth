@@ -1,9 +1,10 @@
 <div ng-controller="HomeController">
   <h1>{{name}}</h1>
 
-  <form ng-submit="sendStuff()" ng-controller='formController'>
-    <input ng-model='formData.url' type="text"/>
-    <button>Submit</button>
+  <form name='shortlyForm' novalidate ng-submit="send.sendStuff(shortlyForm)" ng-controller='formController'>
+    <label name='url'>Enter Your URL: </label>
+    <input name='url' ng-model='formData.url' type="url" ng-minlength=4 />
+    <button ng-disabled='shortlyForm.$invalid'>Submit</button>
     <h2>{{formData.url}}</h2>
   </form>
 
