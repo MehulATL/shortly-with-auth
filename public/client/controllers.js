@@ -23,11 +23,14 @@ angular.module('shortlyApp')
 // LINKS SHIT
 .controller('LinksController', function($scope, $http) {
   $scope.name = 'links';
+  $scope.visits = {};
   $http({
     method: 'GET',
     url: '/links'
     }).then(function(data) {
       console.log(data);
       $scope.data = data.data;
+
+
     });
 });

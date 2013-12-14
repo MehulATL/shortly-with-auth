@@ -5,7 +5,7 @@ body {
 }
 
 a {
-  color: #333;
+  color: blue;
   font-size: 14px;
   text-decoration: none;
 }
@@ -132,6 +132,6 @@ form input[type=text], form input[type=password] {
   clear: both;
 }
 
-ul {
+.list {
   list-style: none;
 }

@@ -1,8 +1,10 @@
 <div ng-controller="LinksController">
   <h1>{{name}}</h1>
-  <ul class='list' ng-repeat="link in data">
-    <li >
-      {{link.url}}
+  <input ng-model='search' type='search' placeholder='search' />
+  <ul class="list">
+    <li ng-repeat="link in data | filter:search | orderBy: 'visits'">
+      <a ng-href='{{link.code}}'>{{link.title}}</a>
+      <span ng-click='{{link.visits}} = {{link.visits}} +1'> Visits: {{link.visits}}</span>
     </li>
   </ul>
 </div>
